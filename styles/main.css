@@ -1,0 +1,104 @@
+@property --color-base {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 10;
+}
+
+/* ===== Variables ===== */
+:root {
+    /* main color */
+    --primary-light: hsl(var(--color-base), 90%, 62%);
+    --primary: hsl(var(--color-base), 90%, 48%);
+    --primary-dark: hsl(var(--color-base), 90%, 38%);
+
+    /* neutral colors */
+    /* light */
+    --lighter: hsl(var(--color-base), 5%, 98%);
+    --light: hsl(var(--color-base), 5%, 95%);
+    --mid-light: hsl(var(--color-base), 5%, 88%);
+    /* grey */
+    --grey-light: hsl(var(--color-base), 10%, 84%);
+    --grey: hsl(var(--color-base), 10%, 52%);
+    --grey-dark: hsl(var(--color-base), 10%, 33%);
+    /* dark */
+    --mid-dark: hsl(var(--color-base), 15%, 23%);
+    --dark: hsl(var(--color-base), 15%, 17%);
+    --darker: hsl(var(--color-base), 15%, 10%);
+
+    /* THEME */
+    /* backgrounds */
+    --body-background: light-dark(var(--mid-light), var(--darker));
+    --content-background: light-dark(var(--lighter), var(--dark));
+    --checkbox-background: light-dark(var(--grey-light), var(--grey-dark));
+    --button-background: light-dark(var(--grey-light), var(--grey-dark));
+    --item-background: light-dark(var(--light), var(--mid-dark));
+    /* others */
+    --font-color: light-dark(var(--grey-dark), var(--grey-light));
+    --outline-color: light-dark(var(--primary), var(--primary-light));
+    --contrast-color: light-dark(var(--grey-light), var(--primary-dark));
+    --decorations-color: light-dark(var(--grey), var(--grey));
+    --border-color: light-dark(var(--mid-light), var(--grey-dark));
+
+    /* transitions */
+    --quick-transition: 0.1s;
+    --medium-transition: 0.3s;
+
+    /* header */
+    --header-height: 5rem;
+
+    color-scheme: light dark;
+}
+
+/* ===== Global ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+:focus-visible {
+    outline: 3px solid var(--outline-color);
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--primary-light);
+    color: var(--lighter);
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: var(--font-color);
+    background-color: var(--body-background);
+}
+
+body.light {
+    color-scheme: light;
+}
+
+body.dark {
+    color-scheme: dark;
+}
+
+.btn {
+    height: 100%;
+    aspect-ratio: 1/1;
+    font-size: 1rem;
+    color: var(--lighter);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--quick-transition) ease;
+    &:hover {
+        background-color: var(--primary-dark);
+    }
+    &:active {
+        background-color: var(--primary-light);
+    }
+}

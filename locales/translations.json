@@ -1,0 +1,20 @@
+{
+    "es": {
+        "theme-btn": "Cambiar tema",
+        "add-task-value": "A&ntilde;adir nueva tarea",
+        "checkmark-aria-label": "Marcar como ",
+        "checkmark-done": "completada",
+        "checkmark-pending": "pendiente",
+        "content-aria-label": "Escribe aquí tu tarea",
+        "remove-aria-label": "Eliminar la tarea"
+    },
+    "en": {
+        "theme-btn": "Change theme",
+        "add-task-value": "Add new task",
+        "checkmark-aria-label": "Mark task as ",
+        "checkmark-done": "done",
+        "checkmark-pending": "pending",
+        "content-aria-label": "Write your task here",
+        "remove-aria-label": "Remove task"
+    }
+}
